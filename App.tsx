@@ -1,20 +1,27 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import FundScreen from './src/screens/FundScreen';
+import HomeScreen from './src/screens/HomeScreen';
+import LearnScreen from './src/screens/LearnScreen';
+import LogoScreen from './src/screens/LogoScreen';
+import OptimizationScreen from './src/screens/OptimizationScreen';
+import PortScreen from './src/screens/PortScreen';
 
-export default function App() {
+const Stack = createStackNavigator();
+
+function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name='Logo' component={LogoScreen} options={{ headerShown: false }}/>
+        <Stack.Screen name='Home' component={HomeScreen} options={{ headerShown: false }}/>
+        <Stack.Screen name='Optimize' component={OptimizationScreen} options={{ headerShown: false }}/>
+        <Stack.Screen name='Fund' component={FundScreen} options={{ headerShown: false }}/>
+        <Stack.Screen name='Learn' component={LearnScreen} options={{ headerShown: false }}/>
+        <Stack.Screen name='Port' component={PortScreen} options={{ headerShown: false }}/>
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+export default App;
