@@ -9,7 +9,7 @@ interface props {
 
 export default function NavBar(props: props) {
     return (
-        <View style={{ height: '35%', position: 'relative', backgroundColor: '#73B3B8' }}>
+        <View style={{ height: '15%', backgroundColor: '#73B3B8' }}>
             <View style={styles.fixedArrow}>
                 <Icon name='arrow-left' type='font-awesome-5' size={20}/>
             </View>
