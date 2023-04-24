@@ -1,6 +1,7 @@
-import { View, Text, StyleSheet } from 'react-native'
+import { View, Text, StyleSheet, TouchableOpacity} from 'react-native'
 import React from 'react'
 import { Icon } from '@rneui/themed';
+import { useNavigation } from '@react-navigation/native';
 
 interface props {
     title: string;
@@ -8,11 +9,17 @@ interface props {
 }
 
 export default function NavBar(props: props) {
+    const navigate = useNavigation();
+
+    const navigationHandler = () => {
+        navigate.goBack();
+    }
+
     return (
         <View style={{ height: '15%', backgroundColor: '#73B3B8' }}>
-            <View style={styles.fixedArrow}>
+            <TouchableOpacity style={styles.fixedArrow} onPress={navigationHandler}>
                 <Icon name='arrow-left' type='font-awesome-5' size={20}/>
-            </View>
+            </TouchableOpacity>
             {props.showHeart ?? <View style={styles.fixedHeart}>
                 <Icon name='heart' type='font-awesome-5' size={20}/>
             </View>}
@@ -30,6 +37,7 @@ const styles = StyleSheet.create({
       left: -370,
       right: 0,
       bottom: 0,
+      zIndex: 1
     },
     fixedHeart: {
         position: 'absolute',

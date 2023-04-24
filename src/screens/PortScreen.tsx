@@ -5,7 +5,7 @@ import NavBar from '../components/NavBar'
 export default function PortScreen() {
   return (
     <View style={{flex: 1}}>
-      <NavBar title='Optimization Portfolio' showHeart={false} />
+      <NavBar title='Portfolio' showHeart={false} />
       <Text>Port</Text>
     </View>
   )

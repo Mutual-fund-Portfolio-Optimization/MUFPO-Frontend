@@ -5,7 +5,7 @@ import NavBar from '../components/NavBar'
 export default function LearnScreen() {
   return (
     <View style={{flex: 1}}>
-      <NavBar title='Optimization Portfolio' showHeart={false} />
+      <NavBar title='Learning Mutual Fund' showHeart={false} />
       <Text>LearnScreen</Text>
     </View>
   )
